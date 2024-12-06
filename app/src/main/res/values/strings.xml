@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyProfileApp</string>
+    <string-array name="profile_statuses">
+        <item>На связи</item>
+        <item>Не беспокоить</item>
+        <item>Вне зоны доступа</item>
+    </string-array>
+</resources>

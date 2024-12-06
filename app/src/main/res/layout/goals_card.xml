@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="elemant"
+            type="com.melancholicbastard.myprofileapp.recycleview.Goal" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/border"
+        android:layout_margin="6dp">
+
+        <TextView
+            android:id="@+id/TV1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="6dp"
+            android:padding="1dp"
+            android:text="@{elemant.goal}"
+            android:textSize="16sp"
+
+            tools:text="Подорвал государственную целостность Южной Кореи" />
+
+        <TextView
+            android:id="@+id/TV2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:layout_margin="6dp"
+            android:padding="1dp"
+            android:text="@{elemant.date}"
+            android:textSize="16sp"
+            tools:text="03.12.24" />
+
+    </LinearLayout>
+</layout>

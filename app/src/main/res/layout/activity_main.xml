@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel1"
+            type="com.melancholicbastard.myprofileapp.MainViewModel" />
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="@drawable/rectangular_border2"
+        >
+
+        <TextView
+            android:id="@+id/BT1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel1.buttonLD}"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/border"
+            android:onClick="@{() -> viewModel1.transfer()}"
+            tools:text="Profile"/>
+
+    </LinearLayout>
+</layout>

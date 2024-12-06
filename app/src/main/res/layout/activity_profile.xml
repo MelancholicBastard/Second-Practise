@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel2"
+            type="com.melancholicbastard.myprofileapp.ProfileViewModel" />
+    </data>
+
+
+<LinearLayout
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangular_border1"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/BT2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="back_to_activity"
+            android:src="@drawable/arrow"
+            android:layout_margin="10dp" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ShapedIV"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:padding="2dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_foreground"
+            app:strokeWidth="3dp"
+            app:strokeColor="@color/black"
+            app:shapeAppearanceOverlay="@style/CircleImageShape"
+            />
+        
+        <TextView
+            android:id="@+id/TV1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="10dp"
+            android:text="@{viewModel2.nameLD}"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            tools:text="Surname Name"/>
+
+        <TextView
+            android:id="@+id/TV2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="20dp"
+            android:text="work position"
+            android:textSize="20sp"
+            android:textStyle="italic"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rectangular_border2"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/IV"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:padding="2dp"
+                android:scaleType="centerCrop"
+                android:background="@color/white"
+                tools:background="@color/white"
+                app:strokeWidth="3dp"
+                app:strokeColor="@color/black"
+                app:shapeAppearanceOverlay="@style/CircleImageShape" />
+            <Spinner
+                android:id="@+id/SP"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:padding="2dp"
+                android:scaleType="centerCrop"
+                android:background="@mipmap/mail"
+                app:strokeWidth="3dp"
+                app:strokeColor="@color/black"
+                app:shapeAppearanceOverlay="@style/CircleImageShape" />
+            <TextView
+                android:id="@+id/TV3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:text="@{viewModel2.mailLD}"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                tools:text="mail@yandex.ru"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:padding="2dp"
+                android:scaleType="centerCrop"
+                android:background="@mipmap/phone"
+                app:strokeWidth="3dp"
+                app:strokeColor="@color/black"
+                app:shapeAppearanceOverlay="@style/CircleImageShape" />
+            <TextView
+                android:id="@+id/TV4"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:text="@{viewModel2.phoneLD}"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                tools:text="8 (800)-555-35-35"/>
+
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+            <!-- Привязка списка             app:itemList="@{viewModel2.goalsRepositoryLD}"-->
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+
+</LinearLayout>
+</layout>
