@@ -1,8 +1,6 @@
 package com.melancholicbastard.myprofileapp
 
 import android.content.Intent
-import androidx.core.content.ContextCompat.startActivity
-
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 

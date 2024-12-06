@@ -1,7 +1,6 @@
 package com.melancholicbastard.myprofileapp
 
 import android.content.Intent
-import android.graphics.Color
 import android.net.Uri
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
