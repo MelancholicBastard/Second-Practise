@@ -2,6 +2,8 @@ package com.melancholicbastard.myprofileapp
 
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
+import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.melancholicbastard.myprofileapp.recycleview.Goal
@@ -22,8 +24,23 @@ class ProfileViewModel : ViewModel() {
     private val colorArrayLD = MutableLiveData<IntArray>()
     private val colorLD = MutableLiveData<Int>()
 
+    // репозиторий списка достижений
+    private val repo = GoalsRepository()
     val goalsRepositoryLD = MutableLiveData<ArrayList<Goal>>().apply {
-        this.value = GoalsRepository().getGoals()
+        this.value = repo.getGoals()
+    }
+    // функция удаления элемента через репозиторий
+    fun removeItem(item: Any?): Boolean {
+        Log.d("ViewModel", "for goal: $item")
+        if (item is Goal) {
+            Log.d("ViewModel", "goal: $item")
+
+            repo.removeGoal(item)
+            goalsRepositoryLD.value = repo.getGoals()
+        } else {
+            Log.d("ViewModel", "Invalid type for goal: $item")
+        }
+        return true
     }
 
 

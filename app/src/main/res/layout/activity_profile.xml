@@ -147,12 +147,18 @@
                 tools:text="8 (800)-555-35-35"/>
 
         </LinearLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RV"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
-            <!-- Привязка списка             app:itemList="@{viewModel2.goalsRepositoryLD}"-->
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+            app:itemList="@{viewModel2.goalsRepositoryLD}"
+            app:onGoalLongClick="@{goal -> viewModel2.removeItem(goal)}">
+            <!-- Привязка списка -->
+            <!-- Обработчик долгого нажатия -->
 
 
         </androidx.recyclerview.widget.RecyclerView>

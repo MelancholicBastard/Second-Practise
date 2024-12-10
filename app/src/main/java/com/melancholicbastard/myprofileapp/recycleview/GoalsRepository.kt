@@ -20,4 +20,8 @@ class GoalsRepository {
         return goals
     }
 
+    fun removeGoal(item: Goal) {
+        goals.remove(item)
+    }
+
 }

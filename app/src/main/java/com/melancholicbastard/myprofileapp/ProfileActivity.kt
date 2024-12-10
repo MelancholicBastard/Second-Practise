@@ -66,10 +66,10 @@ class ProfileActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
 
-        // обновление recyclerView при изменении репозитория
-        viewModelka.goalsRepositoryLD.observe(this) {goals ->
-            binding.RV.adapter = RecyclerViewAdapter(goals)
-        }
+//        // обновление recyclerView при изменении репозитория
+//        viewModelka.goalsRepositoryLD.observe(this) {goals ->
+//            binding.RV.adapter = RecyclerViewAdapter(goals)
+//        }
 
 
         // завершение активности без передачи данных

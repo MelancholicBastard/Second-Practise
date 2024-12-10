@@ -1,11 +1,22 @@
 package com.melancholicbastard.myprofileapp.recycleview
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.melancholicbastard.myprofileapp.databinding.GoalsCardBinding
 
-class RecyclerViewAdapter(private val goals: ArrayList<Goal>) : RecyclerView.Adapter<RecyclerViewAdapter.GoalViewHolder>() {
+class RecyclerViewAdapter(
+    private var goals: ArrayList<Goal>,
+    var onItemLongClick: ((Goal) -> Boolean)? = null
+) : RecyclerView.Adapter<RecyclerViewAdapter.GoalViewHolder>() {
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateItems(newItems: ArrayList<Goal>) {
+        goals = newItems
+        notifyDataSetChanged() // Сообщает об изменении данных
+    }
+
 
     // создание элементов списка viewHolder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GoalViewHolder {
@@ -17,10 +28,16 @@ class RecyclerViewAdapter(private val goals: ArrayList<Goal>) : RecyclerView.Ada
 
     override fun getItemCount(): Int = goals.size
 
-    // pаполнить данные в элементе списка при его отображении
+    // заполнить данные в элементе списка при его отображении
     override fun onBindViewHolder(holder: GoalViewHolder, position: Int) {
         val goal = goals[position]
         holder.onBind(goal)
+
+        // вызов функции callback при долгом нажатии (может быть не передана в адаптер)
+        holder.itemView.setOnLongClickListener {
+            onItemLongClick?.let { it1 -> it1(goal) } == true
+        }
+
     }
 
     inner class GoalViewHolder(private val binding: GoalsCardBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -33,5 +50,6 @@ class RecyclerViewAdapter(private val goals: ArrayList<Goal>) : RecyclerView.Ada
                 обновят пользовательский интерфейс до того, как произойдут последующие операции */
             }
         }
+
     }
 }
