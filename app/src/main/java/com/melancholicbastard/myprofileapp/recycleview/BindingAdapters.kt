@@ -1,6 +1,6 @@
 package com.melancholicbastard.myprofileapp.recycleview
 
-import android.text.BoringLayout
+ import android.text.BoringLayout
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 

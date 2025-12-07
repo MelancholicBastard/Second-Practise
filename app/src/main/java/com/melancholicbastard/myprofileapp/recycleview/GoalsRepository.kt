@@ -1,5 +1,7 @@
 package com.melancholicbastard.myprofileapp.recycleview
 
+import java.util.ArrayList
+
 class GoalsRepository {
     private var goals: ArrayList<Goal> = arrayListOf(
         Goal("Пожарил рыбу с уксусом", "06.12.24"),
